@@ -64,9 +64,17 @@ Some Example commands
 
 Sample Outputs
 ==============
+#### Configuring your first project
+![configure](/info/configure.png "Configuring your first project")
 
-![configure](/info/configure.png?raw=true "Configuring your first project")
+#### All the assumptions you can make
 ![assumptions](/info/assumptions.png?raw=true "All the assumptions you can make")
-![role_assumption](/info/role_assumption.png?raw=true "Assuming a role from one of the configured projects")
+
+#### Assuming a role from one of the configured projects
+![role_assumption](/info/role_assumption.png?raw=true "")
+
+#### All the active sessions
 ![sessions.png](/info/sessions.png?raw=true "All the active sessions")
+
+#### Switching between active sessions
 ![switching_sessions.png](/info/sessions_switch.png?raw=true "Switching between active sessions")
