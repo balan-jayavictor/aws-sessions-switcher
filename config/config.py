@@ -9,7 +9,7 @@ from aws_sessions_switcher import util
 AWS_CREDS_PATH = '%s/.aws/credentials' % (os.path.expanduser('~'),)
 AWS_ASSUME_CONFIG_PATH = f'%s/.aws/{os.getenv("AWS_SESSIONS_SWITCHER_CONFIG_FILENAME", "sessions_switcher")}' % (
     os.path.expanduser('~'),)
-AWS_ASSUME_BASE_CREDENTIALS_IDENTIFIER_PREFIX = 'aws_sessions_switcher-'
+AWS_ASSUME_BASE_CREDENTIALS_IDENTIFIER_PREFIX = 'aws-sessions-switcher-'
 EXPIRATION_TIMESTAMP_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 # ACTIONS
