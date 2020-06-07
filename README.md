@@ -5,7 +5,7 @@ Working with multiple AWS Accounts from the command like can sometimes be diffic
 multiple projects or between environments of the same project.
 
 `aws-sessions-switcher` is a tool I developed to help myself to make switching between accounts / roles across projects easier.
-I don't see why such a tool cannot be of help to someone like me and hence decided to make it available everyone who
+I don't see why such a tool cannot be of help to someone like me and hence decided to make it available to everyone who
 might be interested.
 
 I hope it helps someone someday!
@@ -49,14 +49,14 @@ Some Example commands
 |-------------------------------------|---------------------------------------------------------------------------------------------|
 | `aws-sessions-switcher configure`                           | Sets up the tool                                                                            |
 | `aws-sessions-switcher reset`                               | Deletes the configuration file created by this tool                                          |
-| `aws-sessions-switcher \-l`                                 | List all the assumptions that can be made                                                   |
+| `aws-sessions-switcher -l`                                  | List all the assumptions that can be made                                                   |
 | `aws-sessions-switcher projects`                            | Lists all the configured projects                                                           |
 | `aws-sessions-switcher environments`                        | Lists all environments for all projects                                                     |
-| `aws-sessions-switcher environments \-n ABCD`               | Lists only the environments configured for the project named ABCD                           |
+| `aws-sessions-switcher environments -n ABCD`                | Lists only the environments configured for the project named ABCD                           |
 | `aws-sessions-switcher sessions`                            | Lists all the sessions you have created using this tool                                     |
 | `aws-sessions-switcher sessions switch`                     | Gives the ability to switch between multiple sessions                                       |
 | `aws-sessions-switcher projects add`                        | Add an additional project                                                                   |
-| `aws-sessions-switcher projects delete \-n ABCD`            | Deletes the configuration of the project named ABCD                                         |
-| `aws-sessions-switcher environments add \-n ABCD`           | TODO:                                                                                       |
-| `aws-sessions-switcher environment delete \-n ABCD \-e dev` | TODO:                                                                                       |
+| `aws-sessions-switcher projects delete -n ABCD`             | Deletes the configuration of the project named ABCD                                         |
+| `aws-sessions-switcher environments add -n ABCD`            | TODO:                                                                                       |
+| `aws-sessions-switcher environment delete -n ABCD -e dev`   | TODO:                                                                                       |
 | `aws-sessions-switcher my\_project dev admin`               | Attempts to assume 'admin' role on the 'dev' environment of the project named 'my\_project' |
