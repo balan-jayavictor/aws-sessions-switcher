@@ -1,0 +1,38 @@
+# Distribution / packaging
+.Python
+*.pyc
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+#mac
+.DS_Store
+
+# Serverless directories
+.serverless
+/.idea/
+node_modules/
+/.idea/*
+
+# pytest coverage report, exclude from src control
+htmlcov/
+.coverage
+
+.venv/
+
+# References
+reference_*
+
+build/
