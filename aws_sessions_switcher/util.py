@@ -129,7 +129,6 @@ def get_assumption_row(project_details):
 
 def print_table(headers, rows):
     t = PrettyTable([green_text(h) for h in headers])
-    print(rows)
     for row in rows:
         t.add_row([yellow_text(item) for item in row])
     print(t)
