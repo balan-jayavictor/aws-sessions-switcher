@@ -60,3 +60,13 @@ Some Example commands
 | `aws-sessions-switcher environments add -n ABCD`            | TODO:                                                                                       |
 | `aws-sessions-switcher environment delete -n ABCD -e dev`   | TODO:                                                                                       |
 | `aws-sessions-switcher my\_project dev admin`               | Attempts to assume 'admin' role on the 'dev' environment of the project named 'my\_project' |
+
+
+Sample Outputs
+==============
+
+![configure](/info/configure.png?raw=true "Configuring your first project")
+![assumptions](/info/assumptions.png?raw=true "All the assumptions you can make")
+![role_assumption](/info/role_assumption.png?raw=true "Assuming a role from one of the configured projects")
+![sessions.png](/info/sessions.png?raw=true "All the active sessions")
+![switching_sessions.png](/info/sessions_switch.png?raw=true "Switching between active sessions")
