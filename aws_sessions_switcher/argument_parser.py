@@ -86,7 +86,7 @@ class ArgumentParser:
         # ENABLE AUTO COMPLETION OF COMMANDS
         argcomplete.autocomplete(self.parent_parser)
 
-        # Instantiate the `aws_sessions_switcher` tool
+        # Instantiate the `aws-sessions-switcher` tool
         self.aws_assume = AwsAssume()
 
         # DYNAMIC => Now load already configured projects into the parser
@@ -147,7 +147,7 @@ class ArgumentParser:
             aws_sessions_switcher.validate_config_file()
             all_config = self.aws_assume.get_all_projects_config()
             for _cfg, _details in list(all_config.items()):
-                _details['command'] = "aws_sessions_switcher {} {} {}".format(
+                _details['command'] = "aws-sessions-switcher {} {} {}".format(
                     _details['project_name'], _details['project_environment'], _details['role_name'])
 
             headers = ['assumptions', 'command_to_run']
