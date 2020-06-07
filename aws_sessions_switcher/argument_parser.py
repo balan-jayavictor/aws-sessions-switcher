@@ -133,7 +133,7 @@ class ArgumentParser:
                 self.aws_assume.list_all_environments()
 
     def run(self):
-        print(util.yellow_text(self.args))
+        # print(util.yellow_text(self.args))
         action = self.args.get(config.ACTION)
         sub_action = self.args.get(config.SUB_ACTION)
 
