@@ -31,7 +31,7 @@ aws-sessions-switcher configure
 Type the details about your AWS Environment, the role you would like to assume, project name etc...
 You can configure additional projects by executing `aws-sessions-switcher projects add` command
 
-![configure](/info/configure.png "Configuring your first project")
+![configure](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/configure.png?raw=true "Configuring your first project")
 
 
 Setup 2: Update your AWS Credentials file 
@@ -43,7 +43,7 @@ Setup 3: Now see all the assumptions you can make
 -------------------------------------------------
 Running `aws-sessions-switcher` or `aws-sessions-switcher -l` will tell you how to assume the different roles that you have configured using this tool!
 
-![assumptions](/info/assumptions.png?raw=true "All the assumptions you can make")
+![assumptions](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/assumptions.png?raw=true "All the assumptions you can make")
 
 Some Example commands
 =====================
@@ -68,16 +68,16 @@ Some Example commands
 Sample Outputs
 ==============
 #### Configuring your first project
-![configure](/info/configure.png "Configuring your first project")
+![configure](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/configure.png?raw=true "Configuring your first project")
 
 #### All the assumptions you can make
-![assumptions](/info/assumptions.png?raw=true "All the assumptions you can make")
+![assumptions](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/assumptions.png?raw=true "All the assumptions you can make")
 
 #### Assuming a role from one of the configured projects
-![role_assumption](/info/role_assumption.png?raw=true "")
+![role_assumption](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/role_assumption.png?raw=true "")
 
 #### All the active sessions
-![sessions.png](/info/sessions.png?raw=true "All the active sessions")
+![sessions.png](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/sessions.png?raw=true "All the active sessions")
 
 #### Switching between active sessions
-![switching_sessions.png](/info/sessions_switch.png?raw=true "Switching between active sessions")
+![switching_sessions.png](https://github.com/balan-jayavictor/aws-sessions-switcher/blob/master/info/sessions_switch.png?raw=true "Switching between active sessions")
