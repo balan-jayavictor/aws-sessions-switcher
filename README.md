@@ -31,6 +31,8 @@ aws-sessions-switcher configure
 Type the details about your AWS Environment, the role you would like to assume, project name etc...
 You can configure additional projects by executing `aws-sessions-switcher projects add` command
 
+![configure](/info/configure.png "Configuring your first project")
+
 
 Setup 2: Update your AWS Credentials file 
 ------------------------------------------
@@ -41,6 +43,7 @@ Setup 3: Now see all the assumptions you can make
 -------------------------------------------------
 Running `aws-sessions-switcher` or `aws-sessions-switcher -l` will tell you how to assume the different roles that you have configured using this tool!
 
+![assumptions](/info/assumptions.png?raw=true "All the assumptions you can make")
 
 Some Example commands
 =====================

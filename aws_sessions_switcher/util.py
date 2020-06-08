@@ -101,7 +101,7 @@ def is_aws_session_active(session_name, session_details):
         return False
     except Exception:
         e = sys.exc_info()[1]
-        print(red_text("Unable to check if session %s is active =>" % (session_name, e.args[0])))
+        print(red_text("Unable to check if session %s is active => %s" % (session_name, e.args[0])))
 
 
 def get_session_time_difference_in_secs(expiration_time):
