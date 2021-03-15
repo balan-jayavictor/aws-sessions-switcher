@@ -132,29 +132,30 @@ class AwsAssume:
         project_config = self.all_projects_config[f'{project_name}-{environment}']
         util.info_log(f"Attempting to assume role: \"{role}\" using ARN: \"{project_config['role_arn']}\" "
                       f"on project: {project_name}")
-        if project_config['mfa_required']:
-            session_name = f"session-{project_name}-{environment}"
+        session_name = f"session-{project_name}-{environment}"
+        options = [
+            ('aws_access_key_id', 'AccessKeyId'),
+            ('aws_secret_access_key', 'SecretAccessKey'),
+            ('aws_session_token', 'SessionToken'),
+            ('aws_security_token', 'SessionToken'),
+        ]
+
+        if project_config['mfa_required'] == 'True':
             mfa_token = config_collector.InputDialog(
                 f"MFA TOKEN for device {project_config['mfa_device_arn']}").get_answer()
             session_creds = aws_client.get_sts_credentials(project_name, project_config, mfa_token, session_name)
-            options = [
-                ('aws_access_key_id', 'AccessKeyId'),
-                ('aws_secret_access_key', 'SecretAccessKey'),
-                ('aws_session_token', 'SessionToken'),
-                ('aws_security_token', 'SessionToken'),
-            ]
-
-            new_session = {k: session_creds['Credentials'][v] for k, v in options}
-            new_session.update(
-                {'expiration': session_creds['Credentials']['Expiration'].strftime(config.EXPIRATION_TIMESTAMP_FORMAT)})
-            config_parser_util.replace_config_section(config.AWS_ASSUME_CONFIG_PATH, session_name, new_session)
-
-            # replace the default profile in the AWS_CREDS file
-            config_parser_util.replace_config_section(config.AWS_CREDS_PATH, 'default', new_session)
-            print(util.green_text('- SUCCESS!'))
         else:
-            print(util.red_text('ALL PROJECT CONFIGS ARE EXPECTED TO HAVE MFA ENABLED, AS OF THIS VERSION. !'))
-            sys.exit(1)
+            session_creds = aws_client.get_sts_credentials_without_mfa(project_name, project_config, session_name)
+
+        new_session = {k: session_creds['Credentials'][v] for k, v in options}
+        new_session.update(
+            {'expiration': session_creds['Credentials']['Expiration'].strftime(config.EXPIRATION_TIMESTAMP_FORMAT)})
+        config_parser_util.replace_config_section(config.AWS_ASSUME_CONFIG_PATH, session_name, new_session)
+
+        # replace the default profile in the AWS_CREDS file
+        config_parser_util.replace_config_section(config.AWS_CREDS_PATH, 'default', new_session)
+        print(util.green_text('- SUCCESS!'))
+
 
     def get_active_sessions(self, project_name, printable=True):
         validate_config_file()

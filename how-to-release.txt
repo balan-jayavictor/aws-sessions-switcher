@@ -1,0 +1,7 @@
+# Ensyre the ~/.pypirc file contains the credentials for pypi repository
+# Then, execute the following commands:
+
+# update the version number in config/__version__.py file
+# rm -rf dist/
+# python setup.py sdist bdist_wheel
+# python -m twine upload dist/*
