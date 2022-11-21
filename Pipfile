@@ -8,10 +8,11 @@ verify_ssl = true
 [packages]
 configparser = "*"
 boto3 = "*"
-pyinquirer = "*"
-dataclasses = "*"
-argcomplete = "*"
-prettytable = "*"
+dataclasses = ">=0.1,<0.6"
+argcomplete = ">=1.11.1,<2"
+prettytable = "<3.5.0,>=1"
+prompt-toolkit = ">=3"
+inquirerpy = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,30 +1,29 @@
 from __future__ import print_function, unicode_literals
 
-from PyInquirer import style_from_dict, Token, prompt
+from InquirerPy import prompt
 from dataclasses import dataclass
 
 from aws_sessions_switcher import util
 
-default_style = style_from_dict({
-    Token.Separator: '#cc5454',
-    Token.QuestionMark: '#E91E63 bold',
-    Token.Selected: '#673AB7 bold',
-    Token.Pointer: '#673ab7 bold',
-    Token.Instruction: '#2196f3',  # default
-    Token.Answer: '#2196f3 bold',
-    Token.Question: '#9ACD32',
-})
+default_style = {
+    'separator': '#cc5454',
+    'questionmark': '#E91E63',
+    'selected': '#673AB7',
+    'pointer': '#673ab7',
+    'instruction': '#2196f3',
+    'answer': '#2196f3 ',
+    'question': '#9ACD32',
+}
 
-selection_style = style_from_dict({
-    Token.Separator: '#cc5454',
-    Token.QuestionMark: '#2196f3 bold',
-    Token.Selected: '#FFFF00 bold',
-    Token.Pointer: '#673ab7 bold',
-    Token.Instruction: '#2196f3',  # default
-    Token.Answer: '#2196f3 bold',
-    Token.Question: '#9ACD32',
-})
-
+selection_style = {
+    'separator': '#cc5454',
+    'questionmark': '#2196f3',
+    'selected': '#FFFF00',
+    'pointer': '#673ab7',
+    'instruction': '#2196f3',
+    'answer': '#2196f3',
+    'question': '#9ACD32',
+}
 
 class ConfigCollector:
     questions = [
@@ -90,7 +89,7 @@ class ConfirmationDialog:
             'name': 'confirmation',
             'message': self.question,
             'default': False,
-        }], style=default_style)
+        }], style=default_style, style_override=False)
         return answers.get('confirmation', 'N')
 
 
@@ -105,7 +104,7 @@ class InputDialog:
             'message': self.question,
             'default': '',
             'validate': util.numbers_only
-        }], style=default_style)
+        }], style=default_style, style_override=False)
         return answers.get('value', '')
 
 
@@ -125,6 +124,6 @@ class SelectionMenu:
             'choices': self.prepare_list(),
             'validate': lambda answer: 'You must choose at least one topping.' \
                 if len(answer) == 0 else True
-        }], style=selection_style)
+        }], style=selection_style, style_override=False)
 
         return answers.get('switch_to_session', None)

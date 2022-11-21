@@ -23,10 +23,11 @@ setuptools.setup(
     install_requires=[
         'configparser>=5.0.0',
         'boto3>=1.13.24',
-        'pyinquirer>=1.0.3,<2',
-        'dataclasses>=0.6,<1',
+        'InquirerPy>=0.3',
+        'dataclasses>=0.1,<0.6',
         'argcomplete>=1.11.1,<2',
-        'prettytable>=0.7.2,<1'
+        'prettytable>=1,<3.5.0',
+        'prompt-toolkit>=3'
     ],
     entry_points={
         'console_scripts': [
