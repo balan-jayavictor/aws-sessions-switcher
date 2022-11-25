@@ -113,10 +113,10 @@ class SelectionMenu:
     choices: list = None
 
     def prepare_list(self):
-        return [dict({'name': x}) for x in self.choices]
+        return [dict({'name': x, 'value': x}) for x in self.choices]
 
     def get_answer(self):
-        answers = prompt(questions=[{
+        answers = prompt([{
             'type': 'list',
             'qmark': '❯',
             'message': 'Select a session to switch to',
